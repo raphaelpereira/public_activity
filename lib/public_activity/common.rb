@@ -275,7 +275,7 @@ module PublicActivity
 
       raise NoKeyProvided, "No key provided for #{self.class.name}" unless key
 
-      prepare_custom_fields(raw_options.except(:params)).merge(
+      prepare_custom_fields(raw_options.except(:params)).reverse_merge(
         {
           key:        key,
           owner:      prepare_relation(:owner,     raw_options),
